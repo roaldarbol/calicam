@@ -1,4 +1,6 @@
 .venv/
+.pytest_cache
+.claude
 calibration*.yaml
 __pycache__
 *.png

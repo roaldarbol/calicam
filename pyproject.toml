@@ -24,3 +24,9 @@ packages = ["src/calicam"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src/"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
