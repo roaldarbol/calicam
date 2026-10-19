@@ -144,6 +144,9 @@ class Calibrator:
                 0.001,
             )
             corners = cv2.cornerSubPix(gray, corners, (11, 11), (-1, -1), criteria)
+            # OpenCV 5 returns (N, 2); keep the (N, 1, 2) layout OpenCV 4 used
+            # so callers (and stored image points) see one shape either way.
+            corners = corners.reshape(-1, 1, 2)
             cv2.drawChessboardCorners(annotated, self.board_size, corners, found)
 
         return found, (corners if found else None), annotated
