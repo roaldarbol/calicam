@@ -1,10 +1,5 @@
 version: 2
 updates:
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-
   # Refresh uv.lock monthly, grouped into a single PR to keep the noise down.
   - package-ecosystem: "uv"
     directory: "/"
